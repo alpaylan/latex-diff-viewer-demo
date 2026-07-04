@@ -1,0 +1,56 @@
+# Copy this to .github/workflows/latex-diff.yml in your LaTeX project.
+#
+# One file, three flows, one viewer:
+#   * PR           -> build base..head diff, comment + upload PDFs.
+#   * push to main -> seed the last N commits' diffs into the `latexdiff-store` branch.
+#   * issue titled "latexdiff <base>..<head>" -> build that diff on demand into the
+#     same store branch, comment a viewer link, close the issue.
+#
+# The store branch is served by GitHub Pages, so push-seeded history and on-demand
+# requests appear in ONE viewer. After the first run creates the branch, set
+# Settings -> Pages -> Deploy from a branch -> latexdiff-store / (root).
+#
+# Needs a difftool.toml (or rely on auto-detection). See difftool.example.toml.
+
+name: LaTeX diff
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  issues:
+    types: [opened, edited]
+
+jobs:
+  # PR: build base..head, publish it to the store viewer, comment a "View ↗" link
+  # (and upload an artifact fallback for fork PRs, which can't push to the store).
+  diff:
+    if: github.event_name == 'pull_request'
+    uses: alpaylan/latex-diff-viewer/.github/workflows/pr-diff.yml@v1
+    permissions:
+      contents: write
+      pull-requests: write
+    with:
+      config: difftool.toml
+
+  # push to main: keep recent-history diffs in the store viewer.
+  seed:
+    if: github.event_name == 'push'
+    uses: alpaylan/latex-diff-viewer/.github/workflows/store-seed.yml@v1
+    permissions:
+      contents: write
+    with:
+      config: difftool.toml
+      # recent: 10        # how many recent commits to pre-build
+
+  # issue "latexdiff <base>..<head>": on-demand diff into the same store.
+  ondemand:
+    if: github.event_name == 'issues' && contains(github.event.issue.title, '..')
+    uses: alpaylan/latex-diff-viewer/.github/workflows/issue-diff.yml@v1
+    permissions:
+      contents: write
+      issues: write
+    with:
+      title: ${{ github.event.issue.title }}
+      issue_number: ${{ github.event.issue.number }}
+      config: difftool.toml
