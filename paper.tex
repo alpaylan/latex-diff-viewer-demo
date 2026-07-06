@@ -32,15 +32,18 @@ visible change to show on the very first page.
 
 \begin{table}[t]
   \centering
-  \begin{tabular}{lrr}
+  \begin{tabular}{lrrr}
     \toprule
-    Method   & Throughput & Latency \\
+    Method    & Throughput & Latency & Memory \\
     \midrule
-    Baseline & 100        & 12      \\
-    Ours     & 145        & 9       \\
+    Baseline  & 100        & 12      & 1.0    \\
+    Ours      & 152        & 8       & 1.1    \\
+    Ours + FT & 168        & 6       & 1.3    \\
     \bottomrule
   \end{tabular}
-  \caption{Widget throughput and latency.}
+  \caption{Widget throughput (higher is better), latency and memory
+  (lower is better). This table was reworked on a later page to show the
+  float-aware changed-pages index.}
   \label{tab:results}
 \end{table}
 
