@@ -4,6 +4,10 @@ A tiny multi-page LaTeX paper (`paper.tex`) wired up with
 [**latex-diff-viewer**](https://github.com/alpaylan/latex-diff-viewer) so you can
 see the tool end-to-end on a real repository.
 
+![Usage walkthrough: open a diff, jump to a changed page, view an added section](demo.gif)
+
+<sub>Silent 27-second walkthrough — [watch as MP4](demo.mp4).</sub>
+
 ## 👉 Open the viewer: https://alpaylan.github.io/latex-diff-viewer-demo/
 
 Pick a **Base** and **Compare** commit and hit *Show diff* — added text is blue and
