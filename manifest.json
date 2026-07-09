@@ -1,0 +1,91 @@
+{
+  "generated": "2026-07-09T03:36:25+00:00",
+  "repo": "latex-diff-viewer-demo",
+  "repo_full": "alpaylan/latex-diff-viewer-demo",
+  "main": "paper.tex",
+  "diffs": [
+    {
+      "id": "211a90c..0a2afcc",
+      "kind": "diff",
+      "status": "done",
+      "pdf": "diff_211a90c__0a2afcc.pdf",
+      "old": "211a90c",
+      "new": "0a2afcc",
+      "old_subject": "Initial draft: Measuring Widgets",
+      "new_subject": "Sharpen the abstract and introduction",
+      "old_date": "2026-07-04 14:00",
+      "new_date": "2026-07-05 15:00",
+      "elapsed": 2.1,
+      "changes": [
+        {
+          "n": 1,
+          "type": "both",
+          "abspage": 1,
+          "page": "1"
+        }
+      ],
+      "added": "2026-07-09T03:36:23+00:00",
+      "index_version": 3
+    },
+    {
+      "id": "0a2afcc..acf4331",
+      "kind": "diff",
+      "status": "done",
+      "pdf": "diff_0a2afcc__acf4331.pdf",
+      "old": "0a2afcc",
+      "new": "acf4331",
+      "old_subject": "Sharpen the abstract and introduction",
+      "new_subject": "Rework the results table",
+      "old_date": "2026-07-05 15:00",
+      "new_date": "2026-07-06 16:00",
+      "elapsed": 2.1,
+      "changes": [
+        {
+          "n": 1,
+          "type": "both",
+          "abspage": 2,
+          "page": "2"
+        }
+      ],
+      "added": "2026-07-09T03:36:21+00:00",
+      "index_version": 3
+    },
+    {
+      "id": "acf4331..f1ff55a",
+      "kind": "diff",
+      "status": "done",
+      "pdf": "diff_acf4331__f1ff55a.pdf",
+      "old": "acf4331",
+      "new": "f1ff55a",
+      "old_subject": "Rework the results table",
+      "new_subject": "Add a limitations section",
+      "old_date": "2026-07-06 16:00",
+      "new_date": "2026-07-07 17:00",
+      "elapsed": 2.1,
+      "changes": [
+        {
+          "n": 1,
+          "type": "add",
+          "abspage": 3,
+          "page": "3"
+        }
+      ],
+      "added": "2026-07-09T03:36:19+00:00",
+      "index_version": 3
+    },
+    {
+      "id": "full:f1ff55a",
+      "kind": "full",
+      "status": "done",
+      "pdf": "full_f1ff55a.pdf",
+      "commit": "f1ff55a",
+      "subject": "Add a limitations section",
+      "date": "2026-07-07 17:00",
+      "elapsed": 1.7,
+      "changes": [],
+      "added": "2026-07-09T03:36:25+00:00",
+      "index_version": 3,
+      "current": true
+    }
+  ]
+}
